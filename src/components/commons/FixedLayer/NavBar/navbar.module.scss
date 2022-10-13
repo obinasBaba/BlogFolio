@@ -2,16 +2,16 @@
 
 .container{
   position: absolute;
-  left: 3rem;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   pointer-events: auto;
   background-color: rgb(30, 30, 30);
   display: flex;
-  flex-flow: column;
+  //flex-flow: column;
   align-items: center;
-  gap: 1rem;
-  padding: 2.3rem 1rem;
+  gap: .9rem;
+  padding: .7rem 3rem;
   border-radius: 5000px;
 
 

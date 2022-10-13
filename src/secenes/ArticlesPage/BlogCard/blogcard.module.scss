@@ -1,0 +1,72 @@
+@use '@/styles' as s;
+
+.container{
+  width: 100%;
+  border-radius: 30px;
+  border: 3px solid rgba(22, 22, 22, 1);;
+  padding: .6rem;
+  background: rgb(12, 12, 12);
+
+  // @include s.margin(top, 10rem);
+  // @include s.padding(bottom, 8rem);
+
+  & :local{
+
+    .img{
+      border-radius: 23px;
+      overflow: hidden;
+      //border: 1px solid red;
+
+      & > *{
+        display: block !important;
+      }
+    }
+
+    .detail{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 .8rem;
+
+      //border: 1px solid red;
+
+      .date{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+      }
+
+      .topics{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        big{
+          color: s.$clrs-burgundy;
+        }
+        span{
+          font-size: .9rem;
+          color: s.$clrs-txt-dark;
+        }
+      }
+    }
+
+    .body{
+      padding: .5rem;
+      margin-bottom: 2rem;
+      margin-top: .6rem;
+
+      .title{
+        font-weight: 900;
+        font-family: s.$fonts-gramatika;
+        color: #abb0b7;
+        //marginbo;
+      }
+
+      .excerpt{
+        font-weight: 300;
+        letter-spacing: .03vmax;
+        font-family: s.$fonts-sofia-pro-soft;
+      }
+    }
+  }
+}
