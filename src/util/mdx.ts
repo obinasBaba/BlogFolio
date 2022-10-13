@@ -7,8 +7,8 @@ import readingTime from 'reading-time';
 
 // rehype plugins
 import imageSize from 'rehype-img-size';
-import RehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+// import RehypeSlug from 'rehype-slug';
+// import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 const rootDirectory = `${process.cwd()}/src`;
 
@@ -72,13 +72,13 @@ export async function getFileBySlug(slug: string) {
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
-        RehypeSlug,
-        [
+        // RehypeSlug,
+        /* [
           rehypeAutolinkHeadings,
           {
             behavior: 'append',
           },
-        ],
+        ],*/
         [imageSize as any, { dir: 'public' }],
       ],
     },
