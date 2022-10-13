@@ -43,8 +43,9 @@ const Layout: React.FC<Props> = ({ children }) => {
             <p>Linkedin</p>
           </div>
 
-          <p><span>	&#169;</span> 2022</p>
-
+          <p>
+            <span> &#169;</span> 2022
+          </p>
         </footer>
       </div>
     </>

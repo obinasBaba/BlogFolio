@@ -56,8 +56,6 @@ const HomePage = () => {
         <div className={s.say_hi}>
           <p>Never Mind, Say Hi!</p>
         </div>
-
-
       </div>
     </div>
   );

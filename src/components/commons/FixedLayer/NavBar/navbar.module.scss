@@ -18,18 +18,7 @@
   // @include s.margin(top, 10rem);
   // @include s.padding(bottom, 8rem);
 
-  & > div{
-    height: 2.5rem;
-    width: 2.5rem;
-    //border: 1px solid red;
-    box-sizing: content-box;
-    background-color: s.$clrs-black;
-    border-radius: .5rem;
-    padding: .2rem;
-    display: grid;
-    place-items: center;
-    //border: 3px solid #171717;
-  }
+
 
   svg{
     width: 100%;
@@ -38,6 +27,30 @@
 
   & :local{
 
+    .hidden{
+      position: absolute;
+      height: 0;
+      width: 0;
+    }
 
+    .item{
+      height: 2.5rem;
+      width: 2.5rem;
+      //border: 1px solid red;
+      box-sizing: content-box;
+      background-color: s.$clrs-black;
+      border-radius: .5rem;
+      padding: .2rem;
+      display: grid;
+      place-items: center;
+      //border: 3px solid #171717;
+
+    }
+
+    .active{
+      path{
+        fill: #8D021F;
+      }
+    }
   }
 }
