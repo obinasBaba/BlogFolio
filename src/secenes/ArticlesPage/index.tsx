@@ -3,9 +3,15 @@ import s from './articlespage.module.scss';
 import { ButtonBase, Chip, TextField, Typography } from '@mui/material';
 import BlogCard from '@/secenes/ArticlesPage/BlogCard';
 import Image from 'next/image';
-import Planet from '@/public/planet.png';
+import Planet from '@/public/images/planet.png';
+import { Matter } from '@/util/mdx';
+import Link from 'next/link';
 
-const ArticlesPage = () => {
+type Props = {
+  postData: Matter[];
+};
+
+const ArticlesPage: React.FC<Props> = ({ postData }) => {
   const topics = [
     'react',
     'node.js',
@@ -76,8 +82,13 @@ const ArticlesPage = () => {
         </header>
 
         <div className={s.blog_list}>
-          <BlogCard />
-          <BlogCard />
+          {postData.map((matter) => (
+            <Link href={`article/${matter.slug}`} key={matter.slug}>
+              <a>
+                <BlogCard matter={matter} />
+              </a>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

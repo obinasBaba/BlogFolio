@@ -3,8 +3,14 @@ import s from './blogcard.module.scss';
 import DummyThumbnail from './img.png';
 import Image from 'next/image';
 import { Typography } from '@mui/material';
+import { Matter } from '@/util/mdx';
+import { parseISO, format } from 'date-fns';
 
-const BlogCard = () => {
+const BlogCard = ({
+  matter: { date, excerpt, title, slug, thumbnailUrl },
+}: {
+  matter: Matter;
+}) => {
   return (
     <div className={s.container}>
       <div className={s.thumbnail}>
@@ -28,7 +34,7 @@ const BlogCard = () => {
               />
             </svg>
 
-            <p>Sep 7th, 2022 — 7 min read</p>
+            <p>{format(parseISO(date), 'MMMM dd, yyyy')} — 7 min read</p>
           </div>
 
           <div className={s.topics}>

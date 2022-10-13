@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './homepage.module.scss';
-import Me from '@/public/me.png';
+import Me from '@/public/images/me.png';
 import Image from 'next/image';
 
 function Arrow() {
