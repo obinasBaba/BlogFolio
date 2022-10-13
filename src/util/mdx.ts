@@ -7,14 +7,10 @@ import readingTime from 'reading-time';
 
 // rehype plugins
 import imageSize from 'rehype-img-size';
-import rehypeSlug from 'rehype-slug';
+import RehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
-// imports end
-
 const rootDirectory = `${process.cwd()}/src`;
-
-// get sorted mdx post
 
 export type Matter = {
   title: string;
@@ -25,6 +21,7 @@ export type Matter = {
   readingTime: string;
 };
 
+// get sorted mdx post
 export async function getSortedPost() {
   const postDirectory = path.join(rootDirectory, 'posts');
 
@@ -75,7 +72,7 @@ export async function getFileBySlug(slug: string) {
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [
-        rehypeSlug,
+        RehypeSlug,
         [
           rehypeAutolinkHeadings,
           {
