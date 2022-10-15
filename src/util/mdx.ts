@@ -19,7 +19,7 @@ export type Matter = {
   thumbnailUrl: string;
   excerpt: string;
   slug: string;
-  readingTime: string;
+  readingTime: Record<string, any>;
   tags: string[];
 };
 

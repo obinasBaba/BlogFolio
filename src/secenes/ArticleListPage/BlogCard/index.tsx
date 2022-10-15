@@ -6,11 +6,11 @@ import { Typography } from '@mui/material';
 import { Matter } from '@/util/mdx';
 import { parseISO, format } from 'date-fns';
 
-const BlogCard = ({
-  matter: { date, excerpt, title, slug, thumbnailUrl },
-}: {
-  matter: Matter;
-}) => {
+const BlogCard = ({ matter }: { matter: Matter }) => {
+  console.log('matter: ', matter);
+
+  const { date, excerpt, title, slug, thumbnailUrl } = matter;
+
   return (
     <div className={s.container}>
       <div className={s.thumbnail}>
@@ -34,7 +34,11 @@ const BlogCard = ({
               />
             </svg>
 
-            <p>{format(parseISO(date), 'MMMM dd, yyyy')} — 7 min read</p>
+            <p>
+              {`${format(parseISO(date), 'MMMM dd, yyyy')} - ${
+                matter.readingTime.text
+              }`}{' '}
+            </p>
           </div>
 
           <div className={s.topics}>
