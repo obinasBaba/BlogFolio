@@ -2,16 +2,21 @@
 
 .container {
   position: absolute;
-  bottom: 4%;
-  left: 4%;
+  top: 3%;
+  right: 4%;
   user-select: none;
   border-radius: 500px;
   overflow: hidden;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.35);
   z-index: 100;
 
+  //border: 1px solid red;
+
   @include s.media-breakpoint-up(md){
+    top: initial;
+    right: initial;
     bottom: 7%;
+    left: 4%;
   }
 
   & :global {
@@ -30,13 +35,13 @@
 
     .tooltip_wrapper {
       display: flex;
-      gap: s.f-unit(1rem);
+      //gap: s.f-unit(1rem);
+      gap: 1rem;
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
       padding: .5rem 1rem .5rem .8rem;
-      background-color: rgb(246, 199, 166);
-      background-color: rgba(246, 152, 87, .1);
+      background-color: rgba(45, 44, 44, 0.61);
       backdrop-filter: blur(6px);
 
 
@@ -51,12 +56,13 @@
 
 
       .tip {
-        color: black;
+        //color: black;
         font-weight: 900;
         margin: 0;
         padding: 0;
         max-width: 42ch;
         overflow-wrap: break-word;
+        margin-top: .2rem;
 
 
         //word-spacing: -4px;

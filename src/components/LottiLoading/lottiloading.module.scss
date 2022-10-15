@@ -18,6 +18,10 @@
       svg {
         display: grid !important;
         transform: scale(2) !important;
+
+        path{
+          stroke: #a40d2d;
+        }
       }
     }
 

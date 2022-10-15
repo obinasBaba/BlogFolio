@@ -53,6 +53,7 @@ const AppToolTip = () => {
 
   // subscription
   useLayoutEffect(() => {
+    // return;
     toolTipsData.onChange(async (v) => {
       const { closable = true, loading = true } = v;
       if (v.text) {
@@ -109,12 +110,8 @@ const AppToolTip = () => {
       animate={controller}
       exit="exit"
     >
-      <div className="bg">
-        {/*<Image src={Bg} objectFit="cover" alt="cover image" />*/}
-      </div>
-
       <div className="tooltip_wrapper">
-        {showLoading && <LottiLoading />}
+        {true && <LottiLoading />}
 
         <small className="tip" ref={toolTipTextNode}>
           this is a tool tip
