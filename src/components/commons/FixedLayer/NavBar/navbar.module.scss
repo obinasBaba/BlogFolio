@@ -41,8 +41,8 @@
 
 
       @include s.media-breakpoint-down(sm) {
-        border: 3px solid rgba(141, 2, 31, 0.35);
-        box-shadow: 0 0 63px 2px rgba(141, 2, 31, 0.35);
+        border: 3px solid rgba(141, 2, 31, 0.18);
+        //box-shadow: 0 0 63px 2px rgba(141, 2, 31, 0.35);
         //transform: scale(1.1);
       }
 

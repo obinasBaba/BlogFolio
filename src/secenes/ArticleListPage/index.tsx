@@ -66,7 +66,9 @@ const ArticlesPage: React.FC<Props> = ({ postData }) => {
           />
 
           <div className={s.topics}>
-            <p>Search by topics</p>
+            <Typography variant="body1" gutterBottom>
+              Search by topics
+            </Typography>
             <ul className={s.tags}>
               {topics.map((topic) => (
                 <li key={topic}>
@@ -83,11 +85,13 @@ const ArticlesPage: React.FC<Props> = ({ postData }) => {
 
         <div className={s.blog_list}>
           {postData.map((matter) => (
-            <Link href={`article/${matter.slug}`} key={matter.slug}>
-              <a>
-                <BlogCard matter={matter} />
-              </a>
-            </Link>
+            <div key={matter.slug}>
+              <Link href={`article/${matter.slug}`}>
+                <a>
+                  <BlogCard matter={matter} />
+                </a>
+              </Link>
+            </div>
           ))}
         </div>
       </div>

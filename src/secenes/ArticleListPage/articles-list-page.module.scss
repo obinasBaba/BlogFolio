@@ -7,7 +7,7 @@
   //border: 1px solid blue;
 
   @include s.margin(top, 10rem);
-  // @include s.padding(bottom, 8rem);
+   @include s.padding(bottom, 8rem);
 
   & :global {
     fieldset {
@@ -31,23 +31,33 @@
       //max-width: 1400px;
       margin: 0 auto;
 
-
       //border: 1px solid red;
+
+     max-width: 1600px;
 
     }
 
 
-
     header {
       position: relative;
-      margin-left: 12vw;
-      margin-right: 12vw;
+      margin: 0 1.5rem;
+      //margin-right: 12vw;
 
-      .planet{
+      @include s.media-breakpoint-up(md){
+        margin-left: 10vw;
+      }
+
+
+      .planet {
+        display: none;
         position: absolute;
         right: 5%;
         top: -15%;
         scale: .9;
+
+        @include s.media-breakpoint-up(md) {
+          //display: block;
+        }
       }
 
 
@@ -64,27 +74,28 @@
         margin-bottom: 3rem;
       }
 
-      .topics{
+      .topics {
         margin-top: 4rem;
+
+
       }
 
-      .tags{
-        margin: 0;
+      .tags {
         padding: 0;
         //border: 1px solid red;
         display: flex;
         flex-flow: wrap;
-        gap: .8rem;
+        gap: s.f-unit-light(.7rem);
         max-width: 800px;
+        margin: 2rem 0 0;
 
-        & :global{
-          .MuiButtonBase-root{
-            padding:.7rem 1rem;
-
+        & :global {
+          .MuiButtonBase-root {
+            padding: .7rem 1rem;
           }
         }
 
-        li{
+        li {
           list-style-type: none;
           margin: 0;
           //border: 2px solid rgba(237, 237, 237, 0.45);
@@ -98,11 +109,32 @@
       }
     }
 
-    .blog_list{
+    .blog_list {
       display: flex;
+      justify-content: space-evenly;
       flex-flow: wrap;
-      gap: 3vw;
-      margin: 7rem 13vw;
+      //gap: 3vw;
+      margin: 3rem .9rem;
+
+      @include s.media-breakpoint-up(md){
+        //margin: 7rem 13vw;
+        margin: 5rem .9rem;
+
+      }
+
+      //border: 1px solid red;
+      //width: 100%;
+
+      & > *{
+        flex: 1 1 47%;
+        margin-top: 5rem;
+        //width: 48%;
+
+        @include s.media-breakpoint-up(sm){
+          max-width: 35vmax;
+
+        }
+      }
     }
   }
 }

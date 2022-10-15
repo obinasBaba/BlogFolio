@@ -7,15 +7,20 @@ import { Matter } from '@/util/mdx';
 import { parseISO, format } from 'date-fns';
 
 const BlogCard = ({ matter }: { matter: Matter }) => {
-  console.log('matter: ', matter);
+  // console.log('matter: ', matter);
 
-  const { date, excerpt, title, slug, thumbnailUrl } = matter;
+  const { date, excerpt, title, thumbnailUrl } = matter;
 
   return (
     <div className={s.container}>
       <div className={s.thumbnail}>
         <div className={s.img}>
-          <Image src={DummyThumbnail} alt="blog thumbnail" />
+          <Image
+            src={thumbnailUrl}
+            layout={'fill'}
+            objectFit="cover"
+            alt="blog thumbnail"
+          />
         </div>
         <div className={s.detail}>
           <div className={s.date}>
@@ -57,7 +62,7 @@ const BlogCard = ({ matter }: { matter: Matter }) => {
 
       <div className={s.body}>
         <Typography variant="h4" className={s.title} gutterBottom>
-          I’m building awesome web products. wanna see?
+          {title}
         </Typography>
         <Typography className={s.excerpt} variant="body1">
           I want to take everything I know about building web applications and

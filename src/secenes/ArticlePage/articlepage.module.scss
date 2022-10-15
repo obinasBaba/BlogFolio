@@ -10,8 +10,23 @@
 
   & :local {
 
+
+    .header{
+      //border: 1px solid red;
+      margin: 4.5rem 1rem 8rem;
+
+      //border: 1px solid red;
+
+
+      @include s.media-breakpoint-up(md){
+        margin: 10rem 20vw 15rem;
+
+      }
+    }
+
     .title{
       text-align: center;
+      //border: 1px solid red;
 
       h1{
         font-family: s.$fonts-poppins;
@@ -19,24 +34,18 @@
         line-height: 120%;
         word-spacing: .3vmax;
         margin-bottom: .8rem;
+        //word-wrap: anywhere;
+        //white-space: break-spaces;
 
+        //word-break: break-all;
+        hyphens: auto;
+        //line-break: anywhere;
 
         @include s.media-breakpoint-up(sm){
           font-size: 4rem;
           margin-bottom: 2rem;
 
         }
-      }
-    }
-
-    .header{
-      //border: 1px solid red;
-      margin: 10rem 1rem 8rem;
-
-
-      @include s.media-breakpoint-up(md){
-        margin: 10rem 20vw 15rem;
-
       }
     }
 
@@ -266,6 +275,7 @@
     line-height: 1.44;
     letter-spacing: 0.1vmax;
     font-size: 1rem;
+    hyphens: auto;
 
 
     @include s.media-breakpoint-up(md) {

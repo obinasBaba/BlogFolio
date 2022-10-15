@@ -13,9 +13,17 @@
   & :local{
 
     .img{
+      position: relative;
+      display: block;
       border-radius: 23px;
       overflow: hidden;
+
       //border: 1px solid red;
+      height: 27vmax;
+
+      @include s.media-breakpoint-up(md){
+        height: 20vmax;
+      }
 
       & > *{
         display: block !important;
@@ -28,27 +36,50 @@
       align-items: center;
       padding: 0 .8rem;
 
-      //border: 1px solid red;
+
+      @include s.media-breakpoint-up(md){
+        padding: 0 1rem;
+      }
 
       .date{
         display: flex;
         align-items: center;
         gap: .5rem;
+        word-spacing: -.1vmax;
+        font-size: .9rem;
+        color: s.$clrs-txt-dark;
+
+
+        svg{
+          max-width: 1.4rem;
+        }
+
+        @include s.media-breakpoint-up(md){
+          word-spacing: .1vmax;
+          font-size: 1rem;
+        }
+
       }
 
       .topics{
         display: flex;
+        font-weight: 300;
         align-items: center;
-        gap: .5rem;
+        gap: .2rem;
         big{
           color: s.$clrs-burgundy;
         }
         span{
           font-size: .9rem;
           color: s.$clrs-txt-dark;
+
+          @include s.media-breakpoint-up(md){
+            font-size: 1rem;
+          }
         }
       }
     }
+
 
     .body{
       padding: .5rem;

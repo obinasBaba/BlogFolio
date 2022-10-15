@@ -1,0 +1,81 @@
+@use '@/styles' as s;
+
+.container {
+  width: 100%;
+
+  // @include s.padding(bottom, 8rem);
+
+  //border: 1px solid red;
+  padding: 7rem 0 13rem;
+  background: #161616;
+  border-top: 3px solid  s.$clrs-burgundy-dark;
+
+  @include s.media-breakpoint-up(md){
+
+    @include s.margin(top, 10rem);
+
+
+    padding: 1rem 0 ;
+    background: black;
+    border-top: 3px solid rgba(50, 1, 11, 0.34);
+
+  }
+
+  & :local {
+
+    .wrapper{
+      position: relative;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 4rem;
+
+      //border: 1px solid white;
+      @include s.media-breakpoint-up(md){
+        flex-flow: row;
+      }
+
+
+    }
+
+    .made {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: s.$fonts-sofia-pro-soft;
+      font-weight: normal;
+
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      p{
+        font-weight: bolder;
+        font-size: 1.2rem;
+        font-family: s.$fonts-sofia-pro-soft;
+      }
+
+      @include s.media-breakpoint-up(md){
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+    }
+
+    .copy{
+      font-weight: normal;
+      span {
+        color: s.$clrs-burgundy;
+      }
+    }
+
+
+  }
+
+
+}

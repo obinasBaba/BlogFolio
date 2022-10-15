@@ -11,48 +11,13 @@
   //border: 1px solid blue;
 
 
-  & :local{
+  & :local {
 
     .main {
       width: 100%;
       min-height: 100vh;
-      //min-height: 100vh - 10vh;
-
-      //flex: 1;
-
-
-
     }
-
-    footer{
-      display: flex;
-      justify-content: space-between;
-      padding: 0 4rem;
-
-      & :local{
-        .made{
-          display: flex;
-          align-items: center;
-          gap: .5rem;
-          font-family: s.$fonts-sofia-pro-soft;
-
-        }
-        .social{
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-
-        }
-
-        span{
-          color: s.$clrs-burgundy;
-        }
-      }
-    }
-
   }
-
-
 
 }
 
