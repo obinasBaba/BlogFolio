@@ -1,41 +1,83 @@
 @use '@/styles' as s;
 
-.container{
+.container {
+  width: 100%;
   position: absolute;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: auto;
-  background-color: rgb(30, 30, 30);
+  //top: 2rem;
   display: flex;
-  //flex-flow: column;
-  align-items: center;
-  gap: .9rem;
-  padding: .7rem 3rem;
-  border-radius: 5000px;
+  justify-content: center;
+
+  //border: thin solid yellow;
+  padding-bottom: 3rem;
+  bottom: 0;
+
+  @include s.media-breakpoint-up(sm) {
+    padding-top: 2rem;
+    padding-bottom: 0;
+    bottom: initial;
+    top: 0;
+  }
 
 
-  // @include s.margin(top, 10rem);
-  // @include s.padding(bottom, 8rem);
-
-
-
-  svg{
+  svg {
     width: 100%;
     height: 100%;
   }
 
-  & :local{
+  & :local {
 
-    .hidden{
+    .wrapper {
+      position: relative;
+      pointer-events: auto;
+      //background-color: rgba(30, 30, 30, 0.54);
+      background-color: rgba(61, 61, 61, 0.54);
+      backdrop-filter: blur(3px);
+      display: flex;
+      //flex-flow: column;
+      align-items: center;
+      gap: .9rem;
+      padding: .7rem 3rem;
+      border-radius: 5000px;
+
+
+      @include s.media-breakpoint-down(sm) {
+        border: 3px solid rgba(141, 2, 31, 0.35);
+        box-shadow: 0 0 63px 2px rgba(141, 2, 31, 0.35);
+        //transform: scale(1.1);
+      }
+
+
+      //border: thin solid red;
+    }
+
+    .return {
+      display: none;
+      position: absolute;
+      left: -1rem;
+      transform: translateX(-100%);
+
+      background-color: rgba(61, 61, 61, 0.54);
+      backdrop-filter: blur(3px);
+      padding: .65rem ;
+      border-radius: 20px;
+
+      path{
+        transform: scale(1.3);
+        transform-origin: center;
+      }
+
+    }
+
+    .hidden {
       position: absolute;
       height: 0;
       width: 0;
     }
 
-    .item{
-      height: 2.5rem;
-      width: 2.5rem;
+    .item {
+      height: 3rem;
+      width: 3rem;
+
       //border: 1px solid red;
       box-sizing: content-box;
       background-color: s.$clrs-black;
@@ -45,10 +87,15 @@
       place-items: center;
       //border: 3px solid #171717;
 
+      @include s.media-breakpoint-up(sm) {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+
     }
 
-    .active{
-      path{
+    .active {
+      path {
         fill: #8D021F;
       }
     }
