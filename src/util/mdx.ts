@@ -9,6 +9,7 @@ import readingTime from 'reading-time';
 import imageSize from 'rehype-img-size';
 import RehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrismPlus from 'rehype-prism-plus'
 
 const rootDirectory = `${process.cwd()}/src`;
 
@@ -19,6 +20,7 @@ export type Matter = {
   excerpt: string;
   slug: string;
   readingTime: string;
+  tags: string[];
 };
 
 // get sorted mdx post
@@ -35,6 +37,7 @@ export async function getSortedPost() {
     const filePath = path.join(postDirectory, file);
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContent);
+    data.tags = {}
 
     // console.log('matter: ', data);
 
@@ -69,8 +72,14 @@ export async function getFileBySlug(slug: string) {
   );
 
   const { data, content } = matter(fileContent);
+  data.tags = {}
+
   const mdxSource = await serialize(content, {
     mdxOptions: {
+      remarkPlugins: [
+        // [remarkPrism, { plugins: ["line-numbers"] }]
+      ],
+
       rehypePlugins: [
         RehypeSlug,
         [
@@ -79,10 +88,13 @@ export async function getFileBySlug(slug: string) {
             behavior: 'append',
           },
         ],
+        [rehypePrismPlus, { ignoreMissing: true }],
         [imageSize as any, { dir: 'public' }],
       ],
     },
   });
+
+  // console.log('MDX frontmatter: ----', mdxSource);
 
   return {
     mdxSource,

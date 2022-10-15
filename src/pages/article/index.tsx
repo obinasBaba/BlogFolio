@@ -1,5 +1,5 @@
 import React from 'react';
-import ArticlesPage from '@/secenes/ArticlesPage';
+import ArticleListPage from '@/secenes/ArticleListPage';
 import { getSortedPost } from '@/util/mdx';
 import { InferGetStaticPropsType } from 'next';
 
@@ -21,7 +21,7 @@ export async function getStaticProps() {
 const Articles = ({
   postData,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return <ArticlesPage postData={postData || []} />;
+  return <ArticleListPage postData={postData || []} />;
 };
 
 export default Articles;

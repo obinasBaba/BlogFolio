@@ -1,11 +1,12 @@
 import React from 'react';
 import { getFileBySlug, getPostDir } from '@/util/mdx';
 import { InferGetStaticPropsType } from 'next';
-import styles from '@/public/SinglePost.module.css';
 import { parseISO, format } from 'date-fns';
 import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote';
 import MDXComponents from '@/components/MdxComponents';
+import styles from '@/public/SinglePost.module.css';
+import ArticlePage from '@/secenes/ArticlePage';
 
 export async function getStaticPaths() {
   const posts = await getPostDir();
@@ -23,7 +24,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }: any) {
   const post = await getFileBySlug(slug);
 
-  console.log('post: ***************', post);
+  // console.log('post: ***************', post);
 
   return {
     props: {
@@ -36,25 +37,9 @@ const Article = ({
   mdxSource,
   frontMatter,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { title, featured, date, readingTime } = frontMatter as any;
+  // console.log('mdxSource: ', mdxSource.frontmatter);
 
-  return (
-    <article className={styles.single__post}>
-      <header>
-        <h1>{title}</h1>
-        <span className={styles.post__meta}>
-          {format(parseISO(date), 'MMMM dd, yyyy')}
-          <span> . </span> {readingTime.text}
-        </span>
-        {featured && (
-          <Image width={800} height={470} src={featured} alt={title} />
-        )}
-      </header>
-      <div>
-        <MDXRemote {...mdxSource} components={{ ...MDXComponents }} />
-      </div>
-    </article>
-  );
+  return <ArticlePage mdxSource={mdxSource} frontMatter={frontMatter} />;
 };
 
 export default Article;

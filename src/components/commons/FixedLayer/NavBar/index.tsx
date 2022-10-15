@@ -48,7 +48,7 @@ const linkData = [
   },
   {
     name: 'blog',
-    link: '/articles',
+    link: '/article',
     el: (
       <svg
         width="38"
