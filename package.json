@@ -1,7 +1,7 @@
 {
   "name": "blog-folio",
   "description": "My corner of internet where I share my code experiment and blogs.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "author": "Henok Getahcew",
   "license": "MIT",

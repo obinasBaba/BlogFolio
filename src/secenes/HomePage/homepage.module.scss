@@ -26,7 +26,10 @@
       @include s.media-breakpoint-up(md) {
         //margin-top: 13rem;
         margin-top: 11vmax;
+      }
 
+      @include s.media-breakpoint-up(lg){
+        margin-top: calc(8rem + 3vmax);
       }
     }
 
@@ -86,6 +89,8 @@
         border: 2px solid rgb(30, 30, 30);
         border-radius: 5000px;
         padding: .5rem 2rem;
+
+        transition: box-shadow .3s cubic-bezier(.4,0,.2,1);
 
 
       }

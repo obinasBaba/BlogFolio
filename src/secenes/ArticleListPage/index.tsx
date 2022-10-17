@@ -45,8 +45,8 @@ const ArticlesPage: React.FC<Props> = ({ postData }) => {
             InputProps={{
               startAdornment: (
                 <svg
-                  width="27"
-                  height="27"
+                  width="22"
+                  height="22"
                   viewBox="0 0 12 12"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"

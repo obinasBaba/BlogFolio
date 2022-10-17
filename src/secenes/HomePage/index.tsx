@@ -2,6 +2,7 @@ import React from 'react';
 import s from './homepage.module.scss';
 import Me from '@/public/images/me.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Arrow() {
   return (
@@ -39,18 +40,34 @@ const HomePage = () => {
         </div>
 
         <div className={s.list}>
-          <div className={s.item}>
-            <p>A, I like seeing cool stuff & hear about design & tech.</p>
-            <Arrow />
-          </div>
-          <div className={s.item}>
-            <p>B, I heard you are designing awsome apps and websites.</p>
-            <Arrow />
-          </div>
-          <div className={s.item}>
-            <p>C, Henzzo, who?!</p>
-            <Arrow />
-          </div>
+          <Link href="/article">
+            <a>
+              <div className={s.item}>
+                <p>A, I like seeing cool stuff & hear about design & tech.</p>
+                <Arrow />
+              </div>
+            </a>
+          </Link>
+
+          <a
+            href="https://henzzo.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <div className={s.item}>
+              <p>B, I heard you are designing awsome apps and websites.</p>
+              <Arrow />
+            </div>
+          </a>
+
+          <Link href="/">
+            <a>
+              <div className={s.item}>
+                <p>C, Henzzo, who?!</p>
+                <Arrow />
+              </div>
+            </a>
+          </Link>
         </div>
 
         <div className={s.say_hi}>

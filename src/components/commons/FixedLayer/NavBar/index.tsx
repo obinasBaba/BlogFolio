@@ -16,6 +16,7 @@ const NavBar = () => {
 
   useEffect(() => {
     if (isMobile) {
+      return;
       gsap.to(container.current, {
         y: trigger ? 0 : '2rem',
         duration: 0.3,
