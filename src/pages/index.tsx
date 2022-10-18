@@ -1,4 +1,4 @@
-import HomePage from '@/secenes/HomePage';
+import HomePage from '@/scenes/HomePage';
 
 export default function Home() {
   return (

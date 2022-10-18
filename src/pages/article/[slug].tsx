@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote';
 import MDXComponents from '@/components/MdxComponents';
 import styles from '@/public/SinglePost.module.css';
-import ArticlePage from '@/secenes/ArticlePage';
+import ArticlePage from '@/scenes/ArticlePage';
 
 export async function getStaticPaths() {
   const posts = await getPostDir();

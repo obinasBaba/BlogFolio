@@ -1,0 +1,61 @@
+@use '@/styles' as s;
+
+.container{
+  width: 100%;
+
+   @include s.margin(top, 12rem);
+  // @include s.padding(bottom, 8rem);
+
+  & :local{
+
+    .wrapper{
+      margin: 0 auto;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 65rem;
+
+      //border: 1px solid yellow;
+
+      .title{
+        font-family: s.$fonts-sofia-pro-soft;
+      }
+
+      .me{
+        max-width: 36rem;
+        max-height: 30vmax;
+        overflow: hidden;
+        border-radius: 2rem;
+        margin-top: 2rem;
+        //border: 1px solid red;
+
+        & > :first-child{
+          display: block !important;
+        }
+      }
+
+      .text{
+        margin-top: 5rem;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+
+        & > :first-child{
+          font-size: 1.5rem;
+          max-width: 40ch;
+          font-weight: 300;
+          hyphens: auto;
+        }
+
+        p{
+          max-width: 55ch;
+          font-weight: normal;
+          font-size: 1.2rem;
+          margin-top: 0rem;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import ArticleListPage from '@/secenes/ArticleListPage';
+import ArticleListPage from '@/scenes/ArticleListPage';
 import { getSortedPost } from '@/util/mdx';
 import { InferGetStaticPropsType } from 'next';
 

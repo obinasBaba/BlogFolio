@@ -60,7 +60,7 @@ const HomePage = () => {
             </div>
           </a>
 
-          <Link href="/">
+          <Link href="/about">
             <a>
               <div className={s.item}>
                 <p>C, Henzzo, who?!</p>

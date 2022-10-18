@@ -9,7 +9,7 @@ import readingTime from 'reading-time';
 import imageSize from 'rehype-img-size';
 import RehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypePrismPlus from 'rehype-prism-plus'
+import rehypePrismPlus from 'rehype-prism-plus';
 
 const rootDirectory = `${process.cwd()}/src`;
 
@@ -37,7 +37,7 @@ export async function getSortedPost() {
     const filePath = path.join(postDirectory, file);
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContent);
-    data.tags = {}
+    data.tags = {};
 
     // console.log('matter: ', data);
 
@@ -72,7 +72,7 @@ export async function getFileBySlug(slug: string) {
   );
 
   const { data, content } = matter(fileContent);
-  data.tags = {}
+  data.tags = {};
 
   const mdxSource = await serialize(content, {
     mdxOptions: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './articles-list-page.module.scss';
 import { ButtonBase, Chip, TextField, Typography } from '@mui/material';
-import BlogCard from '@/secenes/ArticleListPage/BlogCard';
+import BlogCard from '@/scenes/ArticleListPage/BlogCard';
 import Image from 'next/image';
 import Planet from '@/public/images/planet.png';
 import { Matter } from '@/util/mdx';
