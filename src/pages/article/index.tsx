@@ -6,11 +6,6 @@ import { InferGetStaticPropsType } from 'next';
 export async function getStaticProps() {
   const postData = await getSortedPost();
 
-  console.log(
-    'postData: ***********************************************************c',
-    postData,
-  );
-
   return {
     props: {
       postData,

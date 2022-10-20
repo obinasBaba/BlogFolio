@@ -104,7 +104,7 @@
           background: rgba(46, 48, 57, 0.42);
           white-space: nowrap;
           overflow: hidden;
-          transition: all .3s cubic-bezier(.4, 0, .2, 1);
+          transition: box-shadow, color .3s cubic-bezier(.4, 0, .2, 1);
 
 
           --clr-shadow: #0D0D0DFF;
@@ -115,7 +115,7 @@
             --clr-shadow: #8D021FFF;
             box-shadow: 0 0 0 2px s.$clrs-black, 0 0 #0000, 0 0 0 5px var(--clr-shadow);
 
-            transition: all .3s cubic-bezier(.4, 0, .2, 1);
+            transition: box-shadow, color .3s cubic-bezier(.4, 0, .2, 1);
           }
         }
 

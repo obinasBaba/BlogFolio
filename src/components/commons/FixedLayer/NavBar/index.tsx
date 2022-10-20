@@ -71,7 +71,7 @@ const NavBar = () => {
           </div>
         </div>
 
-        {linkData.map(({ name, link, el }) => (
+        {linkData.map(({ name, link, el, external }) => (
           <div
             key={name}
             className={clsx([
@@ -81,9 +81,15 @@ const NavBar = () => {
                 s.active,
             ])}
           >
-            <Link href={link}>
-              <a>{el}</a>
-            </Link>
+            {external ? (
+              <a href={link} rel="noopener noreferrer" target="_blank">
+                {el}
+              </a>
+            ) : (
+              <Link href={link}>
+                <a>{el}</a>
+              </Link>
+            )}
           </div>
         ))}
       </div>

@@ -9,7 +9,7 @@ import { parseISO, format } from 'date-fns';
 const BlogCard = ({ matter }: { matter: Matter }) => {
   // console.log('matter: ', matter);
 
-  const { date, excerpt, title, thumbnailUrl } = matter;
+  const { date, excerpt, title, thumbnailUrl, tags } = matter;
 
   return (
     <div className={s.container}>
@@ -42,20 +42,17 @@ const BlogCard = ({ matter }: { matter: Matter }) => {
             <p>
               {`${format(parseISO(date), 'MMMM dd, yyyy')} - ${
                 matter.readingTime.text
-              }`}{' '}
+              }`}
             </p>
           </div>
 
           <div className={s.topics}>
-            <span>
-              <big>#</big>react
-            </span>
-            <span>
-              <big>#</big>three.js
-            </span>
-            <span>
-              <big>#</big>database
-            </span>
+            {tags.map((tag, idx) => (
+              <span key={idx}>
+                <big>#</big>
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </div>
@@ -65,9 +62,7 @@ const BlogCard = ({ matter }: { matter: Matter }) => {
           {title}
         </Typography>
         <Typography className={s.excerpt} variant="body1">
-          I want to take everything I know about building web applications and
-          package it up into a consumable form. For years envisioned a sort of
-          site where I teach the 99% of skills every web developer shares.
+          {excerpt.slice(0, 200)} ...
         </Typography>
       </div>
     </div>

@@ -1,18 +1,34 @@
 @use '@/styles' as s;
 
-.container{
+.container {
   width: 100%;
   border-radius: 30px;
   border: 3px solid rgba(22, 22, 22, 1);;
   padding: .6rem;
   background: rgb(12, 12, 12);
 
+  height: 100%;
   // @include s.margin(top, 10rem);
   // @include s.padding(bottom, 8rem);
 
-  & :local{
+  transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
 
-    .img{
+
+  --clr-shadow: #0D0D0DFF;
+
+  box-shadow: 0 0 0 0 s.$clrs-black, 0 0 #0000, 0 0 0 0 var(--clr-shadow);
+
+  &:hover {
+    --clr-shadow: #8D021FFF;
+    box-shadow: 0 0 0 2px s.$clrs-black, 0 0 #0000, 0 0 0 5px var(--clr-shadow);
+
+    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
+  }
+
+
+  & :local {
+
+    .img {
       position: relative;
       display: block;
       border-radius: 23px;
@@ -21,27 +37,27 @@
       //border: 1px solid red;
       height: 27vmax;
 
-      @include s.media-breakpoint-up(md){
+      @include s.media-breakpoint-up(md) {
         height: 20vmax;
       }
 
-      & > *{
+      & > * {
         display: block !important;
       }
     }
 
-    .detail{
+    .detail {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 .8rem;
 
 
-      @include s.media-breakpoint-up(md){
+      @include s.media-breakpoint-up(md) {
         padding: 0 1rem;
       }
 
-      .date{
+      .date {
         display: flex;
         align-items: center;
         gap: .5rem;
@@ -50,30 +66,32 @@
         color: s.$clrs-txt-dark;
 
 
-        svg{
+        svg {
           max-width: 1.4rem;
         }
 
-        @include s.media-breakpoint-up(md){
+        @include s.media-breakpoint-up(md) {
           word-spacing: .1vmax;
           font-size: 1rem;
         }
 
       }
 
-      .topics{
+      .topics {
         display: flex;
         font-weight: 300;
         align-items: center;
         gap: .2rem;
-        big{
+
+        big {
           color: s.$clrs-burgundy;
         }
-        span{
+
+        span {
           font-size: .9rem;
           color: s.$clrs-txt-dark;
 
-          @include s.media-breakpoint-up(md){
+          @include s.media-breakpoint-up(md) {
             font-size: 1rem;
           }
         }
@@ -81,22 +99,23 @@
     }
 
 
-    .body{
+    .body {
       padding: .5rem;
       margin-bottom: 2rem;
       margin-top: .6rem;
 
-      .title{
+      .title {
         font-weight: 900;
         font-family: s.$fonts-gramatika;
         color: #abb0b7;
         //marginbo;
       }
 
-      .excerpt{
+      .excerpt {
         font-weight: 300;
         letter-spacing: .03vmax;
         font-family: s.$fonts-sofia-pro-soft;
+        font-size: 1.1rem;
       }
     }
   }

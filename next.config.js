@@ -6,7 +6,7 @@ const nextConfig = {
     domains: ['bottlehaus.saleor.cloud', 'cdn.hashnode.com']
   },
   compiler: {
-    removeConsole: true,
+    // removeConsole: true,
   },
 
   experimental: {

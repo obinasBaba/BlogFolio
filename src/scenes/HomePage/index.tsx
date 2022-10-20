@@ -70,9 +70,15 @@ const HomePage = () => {
           </Link>
         </div>
 
-        <div className={s.say_hi}>
-          <p>Never Mind, Say Hi!</p>
-        </div>
+        <a
+          href="https://henzzo.com/contact"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <div className={s.say_hi}>
+            <p>Never Mind, Say Hi!</p>
+          </div>
+        </a>
       </div>
     </div>
   );

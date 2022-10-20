@@ -37,9 +37,8 @@ export async function getSortedPost() {
     const filePath = path.join(postDirectory, file);
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContent);
-    data.tags = {};
-
-    // console.log('matter: ', data);
+    // data.tags = JSON.parse(JSON.stringify(data.tags));
+    // data.tags = JSON.parse(JSON.stringify(data.tags));
 
     postLists.push({
       ...(data as any),

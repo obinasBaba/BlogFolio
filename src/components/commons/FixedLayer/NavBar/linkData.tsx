@@ -5,7 +5,7 @@ export const linkData = [
     name: 'explore',
     link: '/',
     path: '/',
-
+    external: false,
     el: (
       <svg
         width="38"
@@ -24,8 +24,9 @@ export const linkData = [
   },
   {
     name: 'projects',
-    link: '/projects',
+    link: 'https://henzzo.com/projects',
     path: '/projects',
+    external: true,
     el: (
       <svg
         width="38"
@@ -49,6 +50,7 @@ export const linkData = [
     name: 'blog',
     link: '/article',
     path: '/article/',
+    external: false,
     el: (
       <svg
         width="38"
@@ -71,6 +73,7 @@ export const linkData = [
     name: 'about',
     link: '/about',
     path: '/about',
+    external: false,
     el: (
       <svg
         width="38"
@@ -92,8 +95,9 @@ export const linkData = [
   },
   {
     name: 'contact',
-    link: '/contact',
+    link: 'https://henzzo.com/contact',
     path: '/contact',
+    external: true,
     el: (
       <svg
         width="38"
