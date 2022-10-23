@@ -7,8 +7,13 @@
 
   //border: 1px solid red;
 
-  & :global {
+  & :local {
 
+    .version_no{
+      position: absolute;
+      bottom: 1vmax;
+      right: 5vmin;
+    }
   }
 
 

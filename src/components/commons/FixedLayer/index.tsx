@@ -9,6 +9,8 @@ const FixedLayer = () => {
       <NavBar />
 
       <AppToolTip />
+
+      <p className={s.version_no}>v0.2</p>
     </div>
   );
 };
