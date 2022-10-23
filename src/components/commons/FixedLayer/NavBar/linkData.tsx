@@ -48,8 +48,8 @@ export const linkData = [
   },
   {
     name: 'blog',
-    link: '/article',
-    path: '/article/',
+    link: '/articles',
+    path: '/articles/',
     external: false,
     el: (
       <svg

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './homepage.module.scss';
 import Me from '@/public/images/me.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { AnimatePresence, motion } from 'framer-motion';
 
 function Arrow() {
   return (
@@ -24,7 +25,39 @@ function Arrow() {
   );
 }
 
+const links = [
+  {
+    text: 'A, I like seeing cool stuff & hear about design & tech.',
+    link: '/articles',
+  },
+  {
+    text: 'B, I heard you are designing awsome apps and websites.',
+    link: 'https://henzzo.com/projects',
+    rel: 'noopener noreferrer',
+    target: '_blank',
+  },
+  { text: 'C, Henzzo, who?!', link: '/about' },
+];
+
+const boarderVariants = {
+  initial: {
+    scale: 1.2,
+    opacity: 0,
+  },
+
+  animate: {
+    scale: 1,
+    opacity: 1,
+  },
+  exit: {
+    scale: 1,
+    opacity: 0,
+  },
+};
+
 const HomePage = () => {
+  const [hoverIdx, setHoverIdx] = useState<number | null>(null);
+
   return (
     <div className={s.container}>
       <div className={s.wrapper}>
@@ -39,36 +72,44 @@ const HomePage = () => {
           <p>How can I help you?</p>
         </div>
 
-        <div className={s.list}>
-          <Link href="/article">
-            <a>
-              <div className={s.item}>
-                <p>A, I like seeing cool stuff & hear about design & tech.</p>
-                <Arrow />
-              </div>
-            </a>
-          </Link>
+        <motion.div
+          layout
+          className={s.list}
+          onMouseLeave={() => setHoverIdx(null)}
+        >
+          {links.map(({ text, link, ...props }, idx) => (
+            <Link href={link} key={link} {...props} passHref>
+              <a {...props}>
+                <motion.div
+                  className={s.item}
+                  onHoverStart={() => setHoverIdx(idx)}
+                  // onHoverEnd={() => setHoverIdx(null)}
+                >
+                  <p>{text}</p>
+                  <Arrow />
 
-          <a
-            href="https://henzzo.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <div className={s.item}>
-              <p>B, I heard you are designing awsome apps and websites.</p>
-              <Arrow />
-            </div>
-          </a>
-
-          <Link href="/about">
-            <a>
-              <div className={s.item}>
-                <p>C, Henzzo, who?!</p>
-                <Arrow />
-              </div>
-            </a>
-          </Link>
-        </div>
+                  <AnimatePresence mode="wait">
+                    {hoverIdx !== null && (
+                      <motion.div className={s.hover_wrapper}>
+                        {hoverIdx === idx && (
+                          <motion.div
+                            key={hoverIdx}
+                            className={s.hover}
+                            layoutId="boarder"
+                            variants={boarderVariants}
+                            animate="animate"
+                            exit="exit"
+                            initial="initial"
+                          />
+                        )}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              </a>
+            </Link>
+          ))}
+        </motion.div>
 
         <a
           href="https://henzzo.com/contact"

@@ -28,7 +28,7 @@
         margin-top: 11vmax;
       }
 
-      @include s.media-breakpoint-up(lg){
+      @include s.media-breakpoint-up(lg) {
         margin-top: calc(8rem + 3vmax);
       }
     }
@@ -81,6 +81,7 @@
       gap: 1.5rem;
 
       .item {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -90,10 +91,25 @@
         border-radius: 5000px;
         padding: .5rem 2rem;
 
-        transition: box-shadow .3s cubic-bezier(.4,0,.2,1);
+        transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1);
 
+        //border: 1px solid red;
 
+        .hover_wrapper {
+          position: absolute;
+          inset: 0;
+        }
+
+        .hover {
+          position: absolute;
+          inset: -.5rem;
+          border-radius: 5000px;
+
+          border: 2px solid s.$clrs-burgundy;
+        }
       }
+
+
     }
 
     .say_hi {
