@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './articles-list-page.module.scss';
-import { ButtonBase, Chip, TextField, Typography } from '@mui/material';
+import { ButtonBase, TextField, Typography } from '@mui/material';
 import BlogCard from '@/scenes/ArticleListPage/BlogCard';
 import Image from 'next/image';
 import Planet from '@/public/images/planet.png';
@@ -86,10 +86,8 @@ const ArticlesPage: React.FC<Props> = ({ postData }) => {
         <div className={s.blog_list}>
           {postData.map((matter) => (
             <div key={matter.slug}>
-              <Link href={`article/${matter.slug}`}>
-                <a>
-                  <BlogCard matter={matter} />
-                </a>
+              <Link href={`articles/${matter.slug}`}>
+                <BlogCard matter={matter} />
               </Link>
             </div>
           ))}

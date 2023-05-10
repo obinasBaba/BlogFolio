@@ -79,34 +79,32 @@ const HomePage = () => {
         >
           {links.map(({ text, link, ...props }, idx) => (
             <Link href={link} key={link} {...props} passHref>
-              <a {...props}>
-                <motion.div
-                  className={s.item}
-                  onHoverStart={() => setHoverIdx(idx)}
-                  // onHoverEnd={() => setHoverIdx(null)}
-                >
-                  <p>{text}</p>
-                  <Arrow />
+              <motion.div
+                className={s.item}
+                onHoverStart={() => setHoverIdx(idx)}
+                // onHoverEnd={() => setHoverIdx(null)}
+              >
+                <p>{text}</p>
+                <Arrow />
 
-                  <AnimatePresence mode="wait">
-                    {hoverIdx !== null && (
-                      <motion.div className={s.hover_wrapper}>
-                        {hoverIdx === idx && (
-                          <motion.div
-                            key={hoverIdx}
-                            className={s.hover}
-                            layoutId="boarder"
-                            variants={boarderVariants}
-                            animate="animate"
-                            exit="exit"
-                            initial="initial"
-                          />
-                        )}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              </a>
+                <AnimatePresence mode="wait">
+                  {hoverIdx !== null && (
+                    <motion.div className={s.hover_wrapper}>
+                      {hoverIdx === idx && (
+                        <motion.div
+                          key={hoverIdx}
+                          className={s.hover}
+                          layoutId="boarder"
+                          variants={boarderVariants}
+                          animate="animate"
+                          exit="exit"
+                          initial="initial"
+                        />
+                      )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             </Link>
           ))}
         </motion.div>

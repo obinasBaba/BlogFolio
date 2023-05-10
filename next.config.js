@@ -5,16 +5,19 @@ const nextConfig = {
   images: {
     domains: ['bottlehaus.saleor.cloud', 'cdn.hashnode.com']
   },
+  modularizeImports: {
+    '@mui/material': {
+      transform: '@mui/material/{{member}}',
+    },
+    '@mui/icons-material': {
+      transform: '@mui/icons-material/{{member}}',
+    },
+    '@mui/lab': {
+      transform: '@mui/lab/{{member}}',
+    },
+  },
   compiler: {
     // removeConsole: true,
-  },
-
-  experimental: {
-    modularizeImports: {
-      '@mui/material': {
-        transform: '@mui/material/{{member}}',
-      },
-    },
   },
 };
 

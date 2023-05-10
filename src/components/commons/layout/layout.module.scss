@@ -13,6 +13,14 @@
 
   & :local {
 
+    .grany{
+      position: fixed;
+      mix-blend-mode: soft-light;
+      //z-index: 50;
+      z-index: -1;
+      pointer-events: none;
+    }
+
     .main {
       width: 100%;
       min-height: 100vh;

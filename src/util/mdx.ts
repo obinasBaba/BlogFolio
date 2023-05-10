@@ -75,6 +75,7 @@ export async function getFileBySlug(slug: string) {
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
+      development: false,
       remarkPlugins: [
         // [remarkPrism, { plugins: ["line-numbers"] }]
       ],

@@ -8,17 +8,11 @@ const CustomLink = (props: any) => {
   const isHeadingLink = href.startsWith('#');
 
   if (isInternalLink) {
-    return (
-      <Link href={href}>
-        <a {...props} />
-      </Link>
-    );
+    return <Link href={href}>{...props}</Link>;
   } else if (isHeadingLink) {
     return (
       <Link href={href}>
-        <a className="anchor" {...props}>
           #
-        </a>
       </Link>
     );
   }

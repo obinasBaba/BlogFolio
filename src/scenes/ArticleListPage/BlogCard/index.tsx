@@ -1,15 +1,16 @@
 import React from 'react';
 import s from './blogcard.module.scss';
-import DummyThumbnail from './img.png';
 import Image from 'next/image';
 import { Typography } from '@mui/material';
 import { Matter } from '@/util/mdx';
-import { parseISO, format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 const BlogCard = ({ matter }: { matter: Matter }) => {
   // console.log('matter: ', matter);
 
   const { date, excerpt, title, thumbnailUrl, tags } = matter;
+
+  console.log('tags :', tags);
 
   return (
     <div className={s.container}>
@@ -47,12 +48,13 @@ const BlogCard = ({ matter }: { matter: Matter }) => {
           </div>
 
           <div className={s.topics}>
-            {tags.map((tag, idx) => (
-              <span key={idx}>
-                <big>#</big>
-                {tag}
-              </span>
-            ))}
+            {Array.isArray(tags) &&
+              tags.map((tag, idx) => (
+                <span key={idx}>
+                  <big>#</big>
+                  {tag}
+                </span>
+              ))}
           </div>
         </div>
       </div>
