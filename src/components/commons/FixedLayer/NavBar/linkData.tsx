@@ -23,7 +23,7 @@ export const linkData = [
     ),
   },
   {
-    name: 'blog',
+    name: 'blogs',
     link: '/articles',
     path: '/articles/',
     external: false,

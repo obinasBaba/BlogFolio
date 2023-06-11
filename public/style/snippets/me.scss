@@ -1,0 +1,22 @@
+@use '/src/styles/index' as s;
+
+@mixin Me($height: 4.5rem, $width: 4.5rem) {
+  .me {
+    //position: relative;
+    display: inline-block;
+    height: $height;
+    width: $width;
+    border-radius: 50%;
+    overflow: hidden;
+    //border: 1px solid red;
+    margin: 0 1rem;
+    //border: 5px solid s.$clrs-accent, 5px solid opacify(s.$clrs-accent, .1);
+    box-shadow: 0 0 0 4px s.$clrs-accent, 0 0 0 7px rgba(224, 171, 172, 0.23);
+
+    img {
+      //position: absolute;
+      //scale: 1.1;
+      transform: translateY(8px) scale(1.4);
+    }
+  }
+}

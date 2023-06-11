@@ -29,6 +29,15 @@ const ArticlePage = ({ post }: PropsType) => {
           </Typography>
         </div>
 
+        <div className={s.thumbnail}>
+          <Image
+            src={DummyThumb}
+            alt={title}
+            fill
+            // layout="responsive"
+          />
+        </div>
+
         <div className={s.detail}>
           <div className={s.date}>
             <svg
@@ -59,14 +68,6 @@ const ArticlePage = ({ post }: PropsType) => {
               </span>
             ))}
           </div>
-        </div>
-
-        <div className={s.thumbnail}>
-          <Image
-            src={DummyThumb}
-            alt={title}
-            // layout="responsive"
-          />
         </div>
       </header>
 

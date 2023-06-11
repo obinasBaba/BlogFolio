@@ -1,4 +1,6 @@
 @use '@/styles' as s;
+@use '@/public/style/snippets/me' as *;
+
 
 .container {
   width: 100%;
@@ -33,20 +35,7 @@
       }
     }
 
-    .me {
-      display: inline-block;
-      height: 4.5rem;
-      width: 4.5rem;
-      border-radius: 50%;
-      overflow: hidden;
-      //border: 1px solid red;
-      margin: 0 1rem;
-
-      img {
-        //scale: 1.1;
-        transform: translateY(10px) scale(1.4);
-      }
-    }
+    @include Me;
 
     .greeting {
       text-align: center;

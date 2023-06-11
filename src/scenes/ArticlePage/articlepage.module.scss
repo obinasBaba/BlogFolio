@@ -18,7 +18,7 @@
 
 
       @include s.media-breakpoint-up(md) {
-        margin: 10rem 20vw 15rem;
+        margin: 10rem 20vw 8rem;
 
       }
     }
@@ -102,17 +102,18 @@
     }
 
     .thumbnail {
+      height: 23vmax;
       width: calc(100% + 1.1rem);
       transform: translateX(-.51rem);
       border-radius: 20px;
-      margin: 4rem auto 0;
+      margin: 3rem auto 0;
       //overflow: hidden;
 
 
       @include s.media-breakpoint-up(md) {
         max-width: 50vmax;
         width: 100%;
-        margin: 5rem auto 0;
+        margin: 3rem auto 0;
 
         overflow: hidden;
 

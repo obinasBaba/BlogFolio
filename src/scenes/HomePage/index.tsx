@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import s from './homepage.module.scss';
-import Me from '@/public/images/me.png';
+import MePic from '@/public/images/me2.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -55,6 +55,18 @@ const boarderVariants = {
   },
 };
 
+export const Me = (props: any) => {
+  return (
+    <span className={props.s.me}>
+      <Image
+        src={MePic}
+        alt="my awesome pic"
+        // objectFit="contain"
+      />
+    </span>
+  );
+};
+
 const HomePage = () => {
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
 
@@ -64,13 +76,7 @@ const HomePage = () => {
         <div className={s.greeting}>
           <p>
             Hey, I&apos;m
-            <span className={s.me}>
-              <Image
-                src={Me}
-                alt="my awesome pic"
-                // objectFit="contain"
-              />
-            </span>
+            <Me s={s} />
             Henok
           </p>
           <p>How can I help you?</p>

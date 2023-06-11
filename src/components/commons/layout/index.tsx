@@ -15,14 +15,7 @@ const Layout = ({ children }: any) => {
     <>
       <FixedLayer />
       <div className={s.root} ref={container}>
-        <svg
-          className={clsx([
-            s.grany,
-            'pointer-events-none fixed isolate z-50 opacity-70 mix-blend-soft-light',
-          ])}
-          width="100%"
-          height="100%"
-        >
+        <svg className={clsx([s.grany])} width="100%" height="100%">
           <filter id="pedroduarteisalegend">
             <feTurbulence
               type="fractalNoise"

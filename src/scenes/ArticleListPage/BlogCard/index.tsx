@@ -4,9 +4,30 @@ import Image from 'next/image';
 import { Typography } from '@mui/material';
 import { format, parseISO } from 'date-fns';
 import { Post } from '@contentlayer/generated';
+import clsx from 'clsx';
 
 type PropsType = {
   post: Post;
+};
+
+const Grany = () => {
+  return (
+    <svg className={clsx([s.grany])} width="100%" height="100%">
+      <filter id="pedroduarteisalegend">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency=".80"
+          numOctaves="4"
+          stitchTiles="stitch"
+        ></feTurbulence>
+      </filter>
+      <rect
+        width="100%"
+        height="100%"
+        filter="url(#pedroduarteisalegend)"
+      ></rect>
+    </svg>
+  );
 };
 
 const BlogCard = ({ post }: PropsType) => {
@@ -18,6 +39,7 @@ const BlogCard = ({ post }: PropsType) => {
 
   return (
     <div className={s.container}>
+      <Grany />
       <div className={s.thumbnail}>
         <div className={s.img}>
           <Image src={thumbnailUrl} fill alt="blog thumbnail" />
