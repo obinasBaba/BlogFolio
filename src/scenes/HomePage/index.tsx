@@ -65,7 +65,11 @@ const HomePage = () => {
           <p>
             Hey, I&apos;m
             <span className={s.me}>
-              <Image src={Me} alt="my awesome pic" objectFit="contain" />
+              <Image
+                src={Me}
+                alt="my awesome pic"
+                // objectFit="contain"
+              />
             </span>
             Henok
           </p>

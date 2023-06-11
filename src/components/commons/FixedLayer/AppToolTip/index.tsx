@@ -47,12 +47,12 @@ const AppToolTip = () => {
   const toolTipTextNode = useRef<any>();
   const [showLoading, setShowLoading] = useState<boolean>(true);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     controller.start('exit');
   }, [pathname, controller]);
 
   // subscription
-  useLayoutEffect(() => {
+  useEffect(() => {
     // return;
     toolTipsData.onChange(async (v) => {
       const { closable = true, loading = true } = v;

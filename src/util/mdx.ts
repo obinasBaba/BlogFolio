@@ -11,7 +11,7 @@ import RehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrismPlus from 'rehype-prism-plus';
 
-const rootDirectory = `${process.cwd()}/src`;
+const rootDirectory = `${process.cwd()}/`;
 
 export type Matter = {
   title: string;

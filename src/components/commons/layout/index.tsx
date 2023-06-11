@@ -8,7 +8,7 @@ interface Props {
   pageProps: Record<string, any>;
 }
 
-const Layout = ({ children } : any) => {
+const Layout = ({ children }: any) => {
   const container = useRef<HTMLDivElement | null>(null);
 
   return (

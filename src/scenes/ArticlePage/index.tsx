@@ -2,19 +2,31 @@ import React from 'react';
 import s from './articlepage.module.scss';
 import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
-import { MDXRemote } from 'next-mdx-remote';
 import MDXComponents from '@/components/MdxComponents';
 import DummyThumb from '@/public/thumb.png';
+import { Post } from '@contentlayer/generated';
+import { useMDXComponent } from 'next-contentlayer/hooks';
+import Balancer from 'react-wrap-balancer';
+import { Typography } from '@mui/material';
 
-const ArticlePage = ({ mdxSource, frontMatter }: any) => {
-  const { title, featured, date, readingTime } = frontMatter;
+type PropsType = {
+  post: Post;
+};
+
+const ArticlePage = ({ post }: PropsType) => {
+  const { title, date, readingTime } = post;
   const topics = ['react', 'three.js', 'vue'];
+
+  const Component = useMDXComponent(post.body.code);
 
   return (
     <div className={s.container}>
       <header className={s.header}>
         <div className={s.title}>
-          <h1>{title}</h1>
+          <Typography variant="h2">
+            <Balancer>{post.title}</Balancer>
+            {/*{title}*/}
+          </Typography>
         </div>
 
         <div className={s.detail}>
@@ -35,9 +47,7 @@ const ArticlePage = ({ mdxSource, frontMatter }: any) => {
             </svg>
 
             <p>
-              {`${format(parseISO(date), 'MMMM dd, yyyy')} - ${
-                readingTime.text
-              }`}{' '}
+              {`${format(parseISO(date), 'MMMM dd, yyyy')} - ${readingTime}`}{' '}
             </p>
           </div>
 
@@ -52,12 +62,16 @@ const ArticlePage = ({ mdxSource, frontMatter }: any) => {
         </div>
 
         <div className={s.thumbnail}>
-          <Image src={DummyThumb} alt={title} layout="responsive" />
+          <Image
+            src={DummyThumb}
+            alt={title}
+            // layout="responsive"
+          />
         </div>
       </header>
 
       <article className={s.body}>
-        <MDXRemote {...mdxSource} components={{ ...MDXComponents }} />
+        <Component components={{ ...MDXComponents }} />
       </article>
     </div>
   );

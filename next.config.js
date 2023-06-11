@@ -1,9 +1,11 @@
+const { withContentlayer } = require('next-contentlayer');
+
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['bottlehaus.saleor.cloud', 'cdn.hashnode.com']
+    domains: ['bottlehaus.saleor.cloud', 'cdn.hashnode.com'],
   },
   modularizeImports: {
     '@mui/material': {
@@ -21,4 +23,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withContentlayer(nextConfig);

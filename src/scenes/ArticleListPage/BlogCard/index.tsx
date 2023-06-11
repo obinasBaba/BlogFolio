@@ -2,26 +2,25 @@ import React from 'react';
 import s from './blogcard.module.scss';
 import Image from 'next/image';
 import { Typography } from '@mui/material';
-import { Matter } from '@/util/mdx';
 import { format, parseISO } from 'date-fns';
+import { Post } from '@contentlayer/generated';
 
-const BlogCard = ({ matter }: { matter: Matter }) => {
-  // console.log('matter: ', matter);
+type PropsType = {
+  post: Post;
+};
 
-  const { date, excerpt, title, thumbnailUrl, tags } = matter;
+const BlogCard = ({ post }: PropsType) => {
+  // console.log('Post ---> : ', post);
 
-  console.log('tags :', tags);
+  const { date, excerpt, title, thumbnailUrl, tags } = post;
+
+  // console.log('tags :', tags);
 
   return (
     <div className={s.container}>
       <div className={s.thumbnail}>
         <div className={s.img}>
-          <Image
-            src={thumbnailUrl}
-            layout={'fill'}
-            objectFit="cover"
-            alt="blog thumbnail"
-          />
+          <Image src={thumbnailUrl} fill alt="blog thumbnail" />
         </div>
         <div className={s.detail}>
           <div className={s.date}>
@@ -42,7 +41,7 @@ const BlogCard = ({ matter }: { matter: Matter }) => {
 
             <p>
               {`${format(parseISO(date), 'MMMM dd, yyyy')} - ${
-                matter.readingTime.text
+                post.readingTime
               }`}
             </p>
           </div>

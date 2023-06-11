@@ -6,24 +6,26 @@ import Image from 'next/image';
 import Planet from '@/public/images/planet.png';
 import { Matter } from '@/util/mdx';
 import Link from 'next/link';
+import { allPosts } from '@contentlayer/generated';
 
 type Props = {
   postData: Matter[];
 };
 
+const topics = [
+  'react',
+  'node.js',
+  'frontend',
+  'three.js',
+  'seo',
+  'worker',
+  'pwa',
+  'user experience',
+  'database',
+  'security',
+];
 const ArticlesPage: React.FC<Props> = ({ postData }) => {
-  const topics = [
-    'react',
-    'node.js',
-    'frontend',
-    'three.js',
-    'seo',
-    'worker',
-    'pwa',
-    'user experience',
-    'database',
-    'security',
-  ];
+  // console.log('All Blogs: ', allPosts);
 
   return (
     <div className={s.container}>
@@ -84,10 +86,10 @@ const ArticlesPage: React.FC<Props> = ({ postData }) => {
         </header>
 
         <div className={s.blog_list}>
-          {postData.map((matter) => (
-            <div key={matter.slug}>
-              <Link href={`articles/${matter.slug}`}>
-                <BlogCard matter={matter} />
+          {allPosts.map((post) => (
+            <div key={post.slug}>
+              <Link href={`/${post.url_path}`}>
+                <BlogCard post={post} />
               </Link>
             </div>
           ))}

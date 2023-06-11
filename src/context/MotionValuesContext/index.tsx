@@ -6,7 +6,7 @@ import {
 } from 'framer-motion';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import React, { createContext, useContext, useLayoutEffect } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
 
 type ToolTipType = {
   text: string;
@@ -62,7 +62,7 @@ export const MotionValueContextWrapper: React.FC<{
     timer: null,
   });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const updateMouseMotionValue = (ev: MouseEvent) => {
       mouseX.set(ev.clientX);
       mouseY.set(ev.clientY);

@@ -10,11 +10,7 @@ const CustomLink = (props: any) => {
   if (isInternalLink) {
     return <Link href={href}>{...props}</Link>;
   } else if (isHeadingLink) {
-    return (
-      <Link href={href}>
-          #
-      </Link>
-    );
+    return <Link href={href}>#</Link>;
   }
 
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
@@ -25,8 +21,8 @@ const CustomImage = (props: any) => {
   return (
     <Image
       alt=""
-      layout={'responsive'}
-      objectFit="cover"
+      // layout={'responsive'}
+      // objectFit="cover"
       loading="lazy"
       {...props}
     />

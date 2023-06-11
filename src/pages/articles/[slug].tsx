@@ -1,42 +1,37 @@
 import React from 'react';
-import { getFileBySlug, getPostDir } from '@/util/mdx';
-import { InferGetStaticPropsType } from 'next';
+import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import ArticlePage from '@/scenes/ArticlePage';
+import { allPosts, Post } from '@contentlayer/generated';
 
 export async function getStaticPaths() {
-  const posts = await getPostDir();
-
-  console.log('getStaticPaths post paths', posts);
+  // console.log('getStaticPaths post paths', allPosts[0].slug);
 
   return {
-    paths: posts.map((post) => ({
+    paths: allPosts.map((post) => ({
       params: {
-        slug: post.replace(/\.mdx/, ''),
+        slug: post.slug,
       },
     })),
     fallback: false,
   };
 }
 
-export async function getStaticProps({ params: { slug } }: any) {
-  const post = await getFileBySlug(slug);
+export async function getStaticProps({ params }: GetStaticPropsContext) {
+  // console.log('post paths', params?.slug);
 
-  console.log('post paths', post, slug);
+  const post = allPosts.find((post) => post.slug === params?.slug) as Post;
 
   return {
     props: {
-      ...post,
+      post,
     },
   };
 }
 
-const Article = ({
-  mdxSource,
-  frontMatter,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  // console.log('mdxSource: ', mdxSource.frontmatter);
+const Article = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  // console.log('mdxSource: ', post);
 
-  return <ArticlePage mdxSource={mdxSource} frontMatter={frontMatter} />;
+  return <ArticlePage post={post} />;
 };
 
 export default Article;
