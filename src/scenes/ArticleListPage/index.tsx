@@ -4,13 +4,8 @@ import { ButtonBase, TextField, Typography } from '@mui/material';
 import BlogCard from '@/scenes/ArticleListPage/BlogCard';
 import Image from 'next/image';
 import Planet from '@/public/images/planet.png';
-import { Matter } from '@/util/mdx';
 import Link from 'next/link';
 import { allPosts } from '@contentlayer/generated';
-
-type Props = {
-  postData: Matter[];
-};
 
 const topics = [
   'react',
@@ -24,7 +19,7 @@ const topics = [
   'database',
   'security',
 ];
-const ArticlesPage: React.FC<Props> = ({ postData }) => {
+const ArticlesPage = () => {
   // console.log('All Blogs: ', allPosts);
 
   return (
@@ -88,7 +83,7 @@ const ArticlesPage: React.FC<Props> = ({ postData }) => {
         <div className={s.blog_list}>
           {allPosts.map((post) => (
             <div key={post.slug}>
-              <Link href={`/${post.url_path}`}>
+              <Link href={`${post.url_path}`}>
                 <BlogCard post={post} />
               </Link>
             </div>

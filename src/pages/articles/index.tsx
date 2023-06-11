@@ -1,6 +1,5 @@
 import React from 'react';
 import ArticleListPage from '@/scenes/ArticleListPage';
-import { getSortedPost } from '@/util/mdx';
 import { InferGetStaticPropsType, Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,19 +8,13 @@ export const metadata: Metadata = {
 };
 
 export async function getStaticProps() {
-  const postData = await getSortedPost();
-
   return {
-    props: {
-      postData,
-    },
+    props: {},
   };
 }
 
-const Articles = ({
-  postData,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  return <ArticleListPage postData={postData || []} />;
+const Articles = ({}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  return <ArticleListPage />;
 };
 
 export default Articles;
