@@ -110,6 +110,11 @@
       //overflow: hidden;
 
 
+      img{
+        object-fit: cover;
+      }
+
+
       @include s.media-breakpoint-up(md) {
         max-width: 50vmax;
         width: 100%;

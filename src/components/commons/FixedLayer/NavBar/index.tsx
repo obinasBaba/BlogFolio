@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import { linkData } from '@/components/commons/FixedLayer/NavBar/linkData';
-import { Tooltip, useScrollTrigger } from '@mui/material';
+import { IconButton, Tooltip, useScrollTrigger } from '@mui/material';
 import gsap from 'gsap';
 
 import { isMobile } from 'react-device-detect';
@@ -13,7 +13,7 @@ import ReturnBack from './return.svg';
 import { Me } from '@/scenes/HomePage';
 
 const NavBar = () => {
-  const { pathname } = useRouter();
+  const { pathname, back } = useRouter();
   const container = useRef(null);
   const trigger = useScrollTrigger();
 
@@ -46,15 +46,14 @@ const NavBar = () => {
         </Tooltip>
 
         <Tooltip title="return">
-          <div
+          <IconButton
             className={clsx([s.return, pathname === '/' && s.return_hidden])}
+            onClick={() => back()}
           >
             <div className={clsx([s.item])}>
-              <Link href={'/'}>
-                <Image src={ReturnBack} alt="return back svg" />
-              </Link>
+              <Image src={ReturnBack} alt="return back svg" />
             </div>
-          </div>
+          </IconButton>
         </Tooltip>
 
         {linkData.map(({ name, link, el, external }) => (

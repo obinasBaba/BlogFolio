@@ -19,6 +19,8 @@ const ArticlePage = ({ post }: PropsType) => {
 
   const Component = useMDXComponent(post.body.code);
 
+  console.log('post :', post);
+
   return (
     <div className={s.container}>
       <header className={s.header}>
@@ -31,7 +33,7 @@ const ArticlePage = ({ post }: PropsType) => {
 
         <div className={s.thumbnail}>
           <Image
-            src={DummyThumb}
+            src={post.thumbnailUrl}
             alt={title}
             fill
             // layout="responsive"
