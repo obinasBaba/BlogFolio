@@ -37,7 +37,7 @@ const containerVariant = {
 };
 
 const LottiLoading = dynamic(() => import('@/components/LottiLoading'), {
-  suspense: false,
+  ssr: false,
 });
 
 const AppToolTip = () => {

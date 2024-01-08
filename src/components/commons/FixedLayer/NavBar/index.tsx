@@ -40,8 +40,7 @@ const NavBar = () => {
     <nav className={clsx([s.container, 'nav-container'])} ref={container}>
       <div className={clsx([s.wrapper, 'nav-wrapper'])}>
         <Tooltip title="home">
-          <div>
-            <Me s={s} />
+          <div style={{maxWidth: '4rem', overflow: 'hidden'}}>
           </div>
         </Tooltip>
 

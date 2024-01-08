@@ -35,7 +35,25 @@
       }
     }
 
-    @include Me;
+    .me {
+      //position: relative;
+      display: block;
+      height: 4.5rem;
+      width: 4.5rem;
+      border-radius: 50%;
+      overflow: hidden;
+      //border: 1px solid red;
+      margin: 0 1rem;
+      //border: 5px solid s.$clrs-accent, 5px solid opacify(s.$clrs-accent, .1);
+      box-shadow: 0 0 0 4px s.$clrs-accent, 0 0 0 7px rgba(224, 171, 172, 0.23);
+
+      img {
+        //position: absolute;
+        //scale: 1.1;
+        object-fit: cover;
+        transform: translateY(8px) scale(1.4);
+      }
+    }
 
     .greeting {
       text-align: center;
@@ -107,5 +125,24 @@
       font-family: s.$fonts-sofia-pro-soft;
     }
 
+  }
+}
+
+.me {
+  //position: relative;
+  display: inline-block;
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  //border: 1px solid red;
+  margin: 0 1rem;
+  //border: 5px solid s.$clrs-accent, 5px solid opacify(s.$clrs-accent, .1);
+  box-shadow: 0 0 0 4px s.$clrs-accent, 0 0 0 7px rgba(224, 171, 172, 0.23);
+
+  img {
+    //position: absolute;
+    //scale: 1.1;
+    transform: translateY(8px) scale(1.4);
   }
 }

@@ -57,7 +57,7 @@ const boarderVariants = {
 
 export const Me = (props: any) => {
   return (
-    <span className={props.s.me}>
+    <span className={s.me}>
       <Image
         src={MePic}
         alt="my awesome pic"
@@ -76,7 +76,7 @@ const HomePage = () => {
         <div className={s.greeting}>
           <p>
             Hey, I&apos;m
-            <Me s={s} />
+            <Me />
             Henok
           </p>
           <p>How can I help you?</p>
