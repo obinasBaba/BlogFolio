@@ -10,7 +10,6 @@ import gsap from 'gsap';
 import { isMobile } from 'react-device-detect';
 import Image from 'next/image';
 import ReturnBack from './return.svg';
-import { Me } from '@/scenes/HomePage';
 
 const NavBar = () => {
   const { pathname, back } = useRouter();
@@ -40,8 +39,7 @@ const NavBar = () => {
     <nav className={clsx([s.container, 'nav-container'])} ref={container}>
       <div className={clsx([s.wrapper, 'nav-wrapper'])}>
         <Tooltip title="home">
-          <div style={{maxWidth: '4rem', overflow: 'hidden'}}>
-          </div>
+          <div style={{ maxWidth: '4rem', overflow: 'hidden' }}></div>
         </Tooltip>
 
         <Tooltip title="return">

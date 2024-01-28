@@ -55,7 +55,7 @@ const boarderVariants = {
   },
 };
 
-export const Me = (props: any) => {
+export const Me = () => {
   return (
     <span className={s.me}>
       <Image

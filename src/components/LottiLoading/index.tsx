@@ -8,7 +8,7 @@ const LottiLoading = () => {
   const loadingRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const lottiRef = Lotti.loadAnimation({
+    Lotti.loadAnimation({
       name: LOTTI_NAME,
       container: loadingRef.current!,
       renderer: 'svg',

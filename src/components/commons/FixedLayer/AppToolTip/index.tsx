@@ -1,6 +1,6 @@
 // noinspection JSIgnoredPromiseFromCall,ES6MissingAwait
 
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import s from './apptooltip.module.scss';
 import { useAppInfo } from '@/context/MotionValuesContext';
 import { motion, useAnimation } from 'framer-motion';
