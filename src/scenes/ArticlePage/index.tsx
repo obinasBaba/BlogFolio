@@ -3,7 +3,6 @@ import s from './articlepage.module.scss';
 import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
 import MDXComponents from '@/components/MdxComponents';
-import DummyThumb from '@/public/thumb.png';
 import { Post } from '@contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import Balancer from 'react-wrap-balancer';

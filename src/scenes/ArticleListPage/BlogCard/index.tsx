@@ -31,11 +31,7 @@ const Grany = () => {
 };
 
 const BlogCard = ({ post }: PropsType) => {
-  // console.log('Post ---> : ', post);
-
   const { date, excerpt, title, thumbnailUrl, tags } = post;
-
-  // console.log('tags :', tags);
 
   return (
     <div className={s.container}>
