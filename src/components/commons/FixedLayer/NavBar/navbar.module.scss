@@ -40,14 +40,14 @@
       border-radius: 5000px;
 
 
-      & > :first-child{
+      & > :first-child {
         margin-right: 1rem !important;
         display: grid;
         place-items: center;
         cursor: pointer;
       }
 
-      @include m.Me(2.6rem ,2.6rem);
+      @include m.Me(2.6rem, 2.6rem);
 
 
       @include s.media-breakpoint-down(sm) {

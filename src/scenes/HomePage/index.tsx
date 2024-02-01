@@ -31,7 +31,7 @@ const links = [
     link: '/articles',
   },
   {
-    text: 'B, I heard you are designing awsome apps and websites.',
+    text: 'B, I heard you are designing awesome apps and websites.',
     link: 'https://henzzo.com/projects',
     rel: 'noopener noreferrer',
     target: '_blank',
@@ -58,11 +58,7 @@ const boarderVariants = {
 export const Me = () => {
   return (
     <span className={s.me}>
-      <Image
-        src={MePic}
-        alt="my awesome pic"
-        // objectFit="contain"
-      />
+      <Image src={MePic} alt="my awesome pic" />
     </span>
   );
 };
